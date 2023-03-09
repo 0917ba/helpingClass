@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>당신은 프린트가 필요한가?</title>
+</head>
+<body>
+    <h1>당신은 프린트가 필요한가?</h1>
+    <form action='/main' method="post">
+        <p>
+            학번을 입력하여라.  
+            <input type="text" name="number" placeholder="학번을 입력하세요.">
+        </p>
+        <p>
+            당신은 물리A 프린트가 필요한가? 
+            <input type="radio" id="pay" name="physicsA" checked='checked' value="1">
+            <label for="pay">필요하다.</label>
+            <input type="radio" id="pan" name="physicsA" checked='checked' value="0">
+            <label for="pan">안 필요하다.</label>
+        </p>
+        <p>
+            당신은 화학A 프린트가 필요한가? 
+            <input type="radio" id="cay" name="chemistryA" checked='checked' value="1">
+            <label for="cay">필요하다.</label>
+            <input type="radio" id="can" name="chemistryA" checked='checked' value="0">
+            <label for="can">안 필요하다.</label>
+        </p>
+        <p>
+            당신은 생명과학A 프린트가 필요한가? 
+            <input type="radio" id="bay" name="biologyA" checked='checked' value="1">
+            <label for="bay">필요하다.</label>
+            <input type="radio" id="ban" name="biologyA" checked='checked' value="0">
+            <label for="ban">안 필요하다.</label>
+        </p>
+        <p>
+            당신은 생명과학B 프린트가 필요한가? 
+            <input type="radio" id="bby" name="biologyB" checked='checked' value="1">
+            <label for="bby">필요하다.</label>
+            <input type="radio" id="bbn" name="biologyB" checked='checked' value="0">
+            <label for="bbn">안 필요하다.</label>
+        </p>
+        <button type="제출">제출</button>
+    </form>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <script>
+                alert("{{messages[-1]}}")
+            </script>
+        {% endif %}
+    {% endwith %}
+    
+</body>
+</html>
